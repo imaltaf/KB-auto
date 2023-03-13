@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Input IDs with Commas</title>
+    <style>
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+
+      button {
+        padding: 10px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #output {
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="ids">Enter IDs separated by commas:</label>
+    <input type="text" id="ids">
+    <button onclick="formatIDs()">Format</button>
+    <div id="output"></div>
+
+    <script>
+      function formatIDs() {
+        var idsInput = document.getElementById("ids").value;
+        var idsArray = idsInput.split(",");
+        var idsCount = idsArray.length;
+        var idsOutput = idsArray.join(", ");
+
+        document.getElementById("output").innerHTML =
+          idsCount + ": " + idsOutput;
+      }
+    </script>
+  </body>
+</html>
