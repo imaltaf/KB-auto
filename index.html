@@ -1,55 +1,84 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Input IDs with Commas</title>
-    <style>
-      label {
-        display: block;
-        margin-bottom: 10px;
-      }
+<head>
+<title>KB tool</title>
+<link rel="stylesheet" href="main.css">
 
-      input[type="text"] {
-        padding: 10px;
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin-right: 10px;
-      }
+</head>
+<body>
+<h1>Input Transaction IDs</h1>
+<input type="text" id="inputIds" placeholder="Enter Transaction IDs and press Enter">
+<button id="copy" onclick="copyIds()">Copy IDs</button>
+<button id="reset" onclick="resetIds()">Reset</button>
+<p id="count"></p>
+<p id="output"></p>
+<script>
+		var inputField = document.getElementById("inputIds");
+		inputField.addEventListener("keyup", function(event) {
+			if (event.keyCode === 13) {
+				event.preventDefault();
+				copyIds();
+			}
+		});
 
-      button {
-        padding: 10px;
-        font-size: 16px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
+		function copyIds() {
+			var input = inputField.value;
+			var ids = input.split(" ");
+			var count = ids.length;
+			document.getElementById("count").innerHTML = "Count: " + count;
+			document.getElementById("output").innerHTML = count + ":" + ids.join(", ");
+			var temp = document.createElement("textarea");
+			temp.value = count + ":" + ids.join(",");
+			document.body.appendChild(temp);
+			temp.select();
+			document.execCommand("copy");
+			document.body.removeChild(temp);
+			
+		}
 
-      #output {
-        margin-top: 10px;
-        font-size: 16px;
-        font-weight: bold;
-      }
-    </style>
-  </head>
-  <body>
-    <label for="ids">Enter IDs separated by commas:</label>
-    <input type="text" id="ids">
-    <button onclick="formatIDs()">Format</button>
-    <div id="output"></div>
+		function resetIds() {
+			inputField.value = "";
+			document.getElementById("count").innerHTML = "";
+			document.getElementById("output").innerHTML = "";
+		}
+	</script>
 
-    <script>
-      function formatIDs() {
-        var idsInput = document.getElementById("ids").value;
-        var idsArray = idsInput.split(",");
-        var idsCount = idsArray.length;
-        var idsOutput = idsArray.join(", ");
+<div class="container">
+  <!-- Content here -->
+  <div>
+    <textarea id="input" placeholder="Enter company name %%@!%*!@&"></textarea>
+    <button onclick="processInput()"class= green-button >Process</button>
+  </div>
+  <div id="output"></div>
+  <div>
+    <button onclick="copyOutput()">Copy</button>
+    <button onclick="reset()" class= red-button >Reset</button>
+  </div>
+  <script>
+    function processInput() {
+      const input = document.getElementById("input").value.replace(/&/g, "and");
+      const output = input.replace(/[^\w\s]/gi, " ");
+      document.getElementById("output").innerText = output;
+    }
 
-        document.getElementById("output").innerHTML =
-          idsCount + ": " + idsOutput;
+    function copyOutput() {
+      const output = document.getElementById("output").innerText;
+      navigator.clipboard.writeText(output);
+    }
+
+    function reset() {
+      document.getElementById("input").value = "";
+      document.getElementById("output").innerText = "";
+    }
+
+    document.getElementById("input").addEventListener("keydown", function (e) {
+      if (e.keyCode === 13) {
+        e.preventDefault();
+        processInput();
       }
-    </script>
-  </body>
+    });
+  </script>
+</div> 
+</body>
 </html>
