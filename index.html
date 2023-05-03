@@ -13,36 +13,6 @@
 <button id="reset" onclick="resetIds()">Reset</button>
 <p id="count"></p>
 <p id="output"></p>
-<script>
-		var inputField = document.getElementById("inputIds");
-		inputField.addEventListener("keyup", function(event) {
-			if (event.keyCode === 13) {
-				event.preventDefault();
-				copyIds();
-			}
-		});
-
-		function copyIds() {
-			var input = inputField.value;
-			var ids = input.split(" ");
-			var count = ids.length;
-			document.getElementById("count").innerHTML = "Count: " + count;
-			document.getElementById("output").innerHTML = count + ":" + ids.join(", ");
-			var temp = document.createElement("textarea");
-			temp.value = count + ":" + ids.join(",");
-			document.body.appendChild(temp);
-			temp.select();
-			document.execCommand("copy");
-			document.body.removeChild(temp);
-			
-		}
-
-		function resetIds() {
-			inputField.value = "";
-			document.getElementById("count").innerHTML = "";
-			document.getElementById("output").innerHTML = "";
-		}
-	</script>
 
 <div class="container">
   <!-- Content here -->
@@ -55,30 +25,27 @@
     <button onclick="copyOutput()">Copy</button>
     <button onclick="reset()" class= red-button >Reset</button>
   </div>
-  <script>
-    function processInput() {
-      const input = document.getElementById("input").value.replace(/&/g, "and");
-      const output = input.replace(/[^\w\s]/gi, " ");
-      document.getElementById("output").innerText = output;
-    }
 
-    function copyOutput() {
-      const output = document.getElementById("output").innerText;
-      navigator.clipboard.writeText(output);
-    }
-
-    function reset() {
-      document.getElementById("input").value = "";
-      document.getElementById("output").innerText = "";
-    }
-
-    document.getElementById("input").addEventListener("keydown", function (e) {
-      if (e.keyCode === 13) {
-        e.preventDefault();
-        processInput();
-      }
-    });
-  </script>
 </div> 
+<div class="container">
+
+  <p data-copy="QID75-Latest 3-months statement not available, Need Recent 3/6 Months Bank Acc statement Hence Given Preset.">QID-75</p>
+  <button class="copy-btn">Copy</button>
+  <p class="copied-msg">Content Copied!</p>
+
+
+  <p data-copy="
+  salary not found ,,">not salary</p>
+  <button class="copy-btn">Copy</button>
+  <p class="copied-msg">Content Copied!</p>
+
+
+  <p data-copy="Need valid id card or pay slips to confirm salary.">Docs</p>
+  <button class="copy-btn">Copy</button>
+  <p class="copied-msg">Content Copied!</p>
+  
+</div>
+
+<script src="main.js"></script>
 </body>
 </html>

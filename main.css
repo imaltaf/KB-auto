@@ -55,3 +55,28 @@ button {
 }
 
 
+.copy-btn {
+    background-color: #063b2e; /* Green */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    
+  }
+  
+  .copied-msg {
+    display: none;
+    color: rgb(21, 84, 95);
+    position: relative;
+    top: 50px;
+  }
+  
+  .copy-btn:active + .copied-msg {
+    display: inline-block;
+  }
+  
