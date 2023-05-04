@@ -35,18 +35,18 @@ function resetIds() {
 //special character remover
 function processInput() {
     const input = document.getElementById("input").value.replace(/&/g, "and");
-    const output = input.replace(/[^\w\s]/gi, " ");
-    document.getElementById("output").innerText = output;
+    const output1 = input.replace(/[^\w\s]/gi, " ");
+    document.getElementById("output1").innerText = output1;
   }
 
   function copyOutput() {
-    const output = document.getElementById("output").innerText;
-    navigator.clipboard.writeText(output);
+    const output1 = document.getElementById("output1").innerText;
+    navigator.clipboard.writeText(output1);
   }
 
   function reset() {
     document.getElementById("input").value = "";
-    document.getElementById("output").innerText = "";
+    document.getElementById("output1").innerText = "";
   }
 
   document.getElementById("input").addEventListener("keydown", function (e) {
@@ -71,3 +71,16 @@ copyBtn.addEventListener('click', function() {
     copiedMsg.style.display = 'none';
   }, 2000);
 });
+
+
+function search() {
+  var companyName = document.getElementById("companyName").value;
+  var searchType = document.querySelector('input[name="searchType"]:checked').value;
+  var query = searchType === "site" ? "site: " + companyName : companyName + " zauba";
+  window.open("https://www.google.com/search?q=" + query);
+}
+
+function resetForm() {
+  document.getElementById("companyName").value = "";
+  document.querySelector('input[name="searchType"][value="site"]').checked = true;
+}

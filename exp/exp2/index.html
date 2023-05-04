@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Company Name with Zauba or Site</title>
+    <style>
+      /* Add some basic styling */
+      body {
+        font-family: Arial, sans-serif;
+        
+        background-color: #443e3e;
+      }
+      h1 {
+        margin-top: 50px;
+        font-size: 36px;
+        color: #d8d1d1;
+        text-shadow: 1px 1px #ddd;
+      }
+      label {
+        font-size: 20px;
+        color: #cababa;
+        text-shadow: 1px 1px #ddd;
+        display: block;
+        margin-top: 30px;
+      }
+      input[type="text"] {
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 4px;
+        border: none;
+        box-shadow: 1px 1px 4px rgba(240, 231, 231, 0.829);
+        width: 300px;
+        margin-top: 10px;
+      }
+      input[type="radio"] {
+        margin: 0 10px;
+        transform: translateY(4px);
+      }
+      button {
+        padding: 12px 24px;
+        font-size: 20px;
+        border-radius: 4px;
+        border: none;
+        background-color: #4CAF50;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Company Name with Zauba or Site</h1>
+    <label for="companyName">Enter company name:</label>
+    <br>
+    <input type="text" id="companyName" placeholder="Company Name">
+    <br>
+    <label><input type="radio" name="searchType" value="site" checked> Site</label>
+    <label><input type="radio" name="searchType" value="zauba"> Zauba</label>
+    <br>
+    <button onclick="search()">Search</button>
+    <br>
+    <button onclick="resetForm()">Reset</button>
+    <script>
+      function search() {
+        var companyName = document.getElementById("companyName").value;
+        var searchType = document.querySelector('input[name="searchType"]:checked').value;
+        var query = searchType === "site" ? "site: " + companyName : companyName + " zauba";
+        window.open("https://www.google.com/search?q=" + query);
+      }
+
+      function resetForm() {
+        document.getElementById("companyName").value = "";
+        document.querySelector('input[name="searchType"][value="site"]').checked = true;
+      }
+    </script>
+  </body>
+</html>

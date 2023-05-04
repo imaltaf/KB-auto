@@ -4,13 +4,13 @@
 <head>
 <title>KB tool</title>
 <link rel="stylesheet" href="main.css">
-
 </head>
+
 <body>
 <h1>Input Transaction IDs</h1>
 <input type="text" id="inputIds" placeholder="Enter Transaction IDs and press Enter">
-<button id="copy" onclick="copyIds()">Copy IDs</button>
-<button id="reset" onclick="resetIds()">Reset</button>
+<button-1 id="copy" onclick="copyIds()">Copy IDs</button-1>
+<button-1 id="reset" onclick="resetIds()">Reset</button-1>
 <p id="count"></p>
 <p id="output"></p>
 
@@ -18,34 +18,26 @@
   <!-- Content here -->
   <div>
     <textarea id="input" placeholder="Enter company name %%@!%*!@&"></textarea>
-    <button onclick="processInput()"class= green-button >Process</button>
+    <button-2a onclick="processInput()"class= green-button >Process</button-2a>
   </div>
-  <div id="output"></div>
+  <div id="output1"></div>
   <div>
-    <button onclick="copyOutput()">Copy</button>
-    <button onclick="reset()" class= red-button >Reset</button>
+    <button-2- onclick="copyOutput()">Copy</button-2->
+    <button-2- onclick="reset()" class= red-button >Reset</button-2->
   </div>
-
-</div> 
-<div class="container">
-
-  <p data-copy="QID75-Latest 3-months statement not available, Need Recent 3/6 Months Bank Acc statement Hence Given Preset.">QID-75</p>
-  <button class="copy-btn">Copy</button>
-  <p class="copied-msg">Content Copied!</p>
-
-
-  <p data-copy="
-  salary not found ,,">not salary</p>
-  <button class="copy-btn">Copy</button>
-  <p class="copied-msg">Content Copied!</p>
-
-
-  <p data-copy="Need valid id card or pay slips to confirm salary.">Docs</p>
-  <button class="copy-btn">Copy</button>
-  <p class="copied-msg">Content Copied!</p>
   
-</div>
-
+  <h1>Company Name with Zauba or Site</h1>
+  <label for="companyName">Enter company name:</label>
+  <br>
+  <input type="text" id="companyName" placeholder="Company Name">
+  <br>
+  <label><input type="radio" name="searchType" value="site" checked> Site</label>
+  <label><input type="radio" name="searchType" value="zauba"> Zauba</label>
+  <br>
+  <button onclick="search()">Search</button>
+  <br>
+  <button onclick="resetForm()">Reset</button>
 <script src="main.js"></script>
 </body>
 </html>
+

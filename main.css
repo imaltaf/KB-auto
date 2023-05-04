@@ -17,17 +17,66 @@ input {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #8f4444;
 }
 
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
+
+/*button secition*/
+
+button-1 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+button-2a {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  position: relative;
+  bottom: 8px;
+  
+}
+
+button-2 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  
+}
+
+button-2- {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  position: relative;
+  left: 20px;
+  top: 20px;
+}
+button-3 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  
 }
 
 #output {
@@ -39,6 +88,16 @@ button {
     border-radius: 5px;
     border: 1px solid #ccc;
     overflow-x: auto;
+}
+#output1 {
+  margin-top: 10px;
+  white-space: pre;
+  font-family: monospace;
+  background-color: #574157;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  overflow-x: auto;
 }
 
 #reset {
@@ -72,11 +131,85 @@ button {
   .copied-msg {
     display: none;
     color: rgb(21, 84, 95);
-    position: relative;
-    top: 50px;
+    
   }
   
   .copy-btn:active + .copied-msg {
     display: inline-block;
   }
   
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  #copyButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #copyButton:hover {
+    background-color: #3e8e41;
+  }
+  
+
+  h1 {
+    margin-top: 50px;
+    font-size: 36px;
+    color: #d8d1d1;
+    text-shadow: 1px 1px #ddd;
+  }
+  label {
+    font-size: 20px;
+    color: #cababa;
+    text-shadow: 1px 1px #ddd;
+    display: block;
+    margin-top: 30px;
+  }
+  input[type="text"] {
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 1px 1px 4px rgba(240, 231, 231, 0.829);
+    width: 300px;
+    margin-top: 10px;
+  }
+  input[type="radio"] {
+    margin: 0 10px;
+    transform: translateY(4px);
+  }
+  button {
+    padding: 12px 24px;
+    font-size: 20px;
+    border-radius: 4px;
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #3e8e41;
+  }
